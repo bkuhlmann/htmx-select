@@ -2,28 +2,113 @@
 :toclevels: 5
 :figure-caption!:
 
-= Htmx Select
+:htmx_link: link:https://htmx.org[htmx]
+
+= htmx Select
+
+This library is a {htmx_link} link:https://htmx.org/extensions[extension] that can be used for situations in which you need to make a HTTP GET request via a HTML select option element's value.
 
 toc::[]
 
 == Features
 
+* Enhances HTML select elements to make HTTP GET requests based on option values.
+
+== Screencasts
+
+video::https://alchemists.io/videos/projects/htmx-select/demo.mp4[poster=https://alchemists.io/images/projects/htmx-select/demo.png,width=790,height=508,role=focal_point]
+
 == Requirements
 
-. link:https://www.ruby-lang.org[Ruby].
+. {htmx_link}.
+. link:https://nodejs.org[Node] (optional, for development).
+. link:https://www.ruby-lang.org[Ruby] (optional, for development).
 
 == Setup
 
-To set up project, run:
+The following _assumes_ you are already using {htmx_link} and have it configured in the same manner as documented in this setup section.
+
+To use via the HTML `script` element, add the following to your layout:
+
+[source,html]
+----
+<script src="https://unpkg.com/htmx-select@latest"
+        integrity="sha384-sHXxspXI+1G3Mb+k1zPcNdkBRL2Q+nKLcOtkbUPE0USxJFJtjf5pQpuykwTDAcPc"
+        crossorigin="anonymous">
+</script>
+----
+
+To use via Import Maps, add the following to your layout:
+
+[source,html]
+----
+<script type="importmap">
+  {
+    "imports": {
+      "htmx-select": "https://unpkg.com/htmx-select@latest"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as htmx_remove from "htmx-select";
+</script>
+----
+
+To install via link:https://www.npmjs.com[NPM], run:
 
 [source,bash]
 ----
-git clone https://github.com/bkuhlmann/htmx-select
-cd htmx-select
-bin/setup
+npm install htmx-select
+----
+
+Once the library is installed, you only need to require it:
+
+[source,html]
+----
+<script src="htmx-select.js"></script>
 ----
 
 == Usage
+
+To use, implement a select element with option values that provide URLs to templates or partials. Example:
+
+[source,html]
+----
+<!-- index.html -->
+<main class="body">
+  <label for="version">Version:</label>
+
+  <select id="version"
+          name="version"
+          class="versions"
+          hx-get=""
+          hx-trigger="change"
+          hx-target=".body"
+          hx-ext="select">
+
+    <option value="" class="option">Select...</option>
+    <option value="_0.0.0.html" class="option">0.0.0</option>
+    <option value="_0.0.1.html" class="option">0.0.1</option>
+  </select>
+</main>
+
+<!-- _0.0.0_.html -->
+<p class="version">
+  Version 0.0.0
+  <a href="/">⬅️</a>
+</p>
+
+<!-- _0.0.0_.html -->
+<p class="version">
+  Version 0.0.0
+  <a href="/">⬅️</a>
+</p>
+----
+
+When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via both the `hx-get` and `hx-ext` attributes and ensuring each option element has a URI value. That's it!
+
+💡 The `hx-get` attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
 
 == Development
 
@@ -36,11 +121,22 @@ cd htmx-select
 bin/setup
 ----
 
-You can also use the IRB console for direct access to all objects:
+To build, run:
 
 [source,bash]
 ----
-bin/console
+bin/build
+----
+
+To view interactive demonstration, run
+
+[source,bash]
+----
+# With default port.
+bin/demo
+
+# With custom port.
+bin/demo 9050
 ----
 
 == Tests
@@ -50,6 +146,35 @@ To test, run:
 [source,bash]
 ----
 bin/rake
+----
+
+To only check code quality, run:
+
+[source,bash]
+----
+npm run quality
+----
+
+To only check specs, run:
+
+[source,bash]
+----
+bin/rspec
+----
+
+== Deployment
+
+To deploy, follow these steps:
+
+. Ensure link:https://alchemists.io/projects/milestoner[Milestoner] is installed.
+. Ensure you are on the `main` branch.
+. Run the following:
+
+[source,bash]
+----
+bin/build
+npm publish
+milestoner --publish
 ----
 
 == link:https://alchemists.io/policies/license[License]
