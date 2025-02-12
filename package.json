@@ -1,0 +1,42 @@
+{
+  "name": "htmx-select",
+  "version": "0.0.0",
+  "description": "A htmx extension for HTML select element events.",
+  "main": "build/htmx-select.js",
+  "type": "module",
+  "files": [
+    "build/*.js",
+    "README.adoc",
+    "CITATION.cff",
+    "LICENSE.adoc"
+  ],
+  "unpkg": "build/htmx-select.js",
+  "scripts": {
+    "build": "bin/build",
+    "quality": "eslint . && bin/rake quality",
+    "uglify": "uglifyjs -m eval -o build/htmx-select.js lib/htmx-select.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkuhlmann/htmx-select.git"
+  },
+  "keywords": [
+    "htmx",
+    "extension",
+    "select",
+    "event"
+  ],
+  "author": "Brooke Kuhlmann",
+  "license": "Hippocratic-2.1",
+  "bugs": {
+    "url": "https://github.com/bkuhlmann/htmx-select/issues"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/bkuhlmann"
+  },
+  "homepage": "https://alchemists.io/projects/htmx-select",
+  "devDependencies": {
+    "eslint": "~9.20",
+    "uglify-js": "~3.19"
+  }
+}
