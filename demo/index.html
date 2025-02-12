@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <title>Demo</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="A demo page.">
+    <meta name="author" content="Brooke Kuhlmann">
+
+    <link href="/stylesheet.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/htmx.org@2.0"></script>
+    <script src="/htmx-select.js"></script>
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <h1 class="label">htmx Select</h1>
+      <h2 class="label">Demonstration</h2>
+    </header>
+
+    <main class="body">
+      <label for="version">Version:</label>
+
+      <select id="version"
+              name="version"
+              class="versions"
+              hx-get=""
+              hx-trigger="change"
+              hx-target=".body"
+              hx-ext="select">
+
+        <option value="" class="option">Select...</option>
+        <option value="_0.0.0.html" class="option">0.0.0</option>
+        <option value="_0.0.1.html" class="option">0.0.1</option>
+      </select>
+    </main>
+  </body>
+</html>
