@@ -6,7 +6,7 @@
 
 = htmx Select
 
-This library is a {htmx_link} link:https://htmx.org/extensions[extension] that can be used for situations in which you need to make a HTTP GET request via a HTML select option element's value.
+This library is a {htmx_link} link:https://htmx.org/extensions[extension] that can be used for situations where you need to make a HTTP GET request via a HTML select option's value upon a change and/or blur event. By default, most browsers don't support this functionality (except Firefox) so, by using this extention, you can enhance the select element to load/render dynamic content for a better user experience.
 
 toc::[]
 
@@ -93,13 +93,13 @@ To use, implement a select element with option values that provide URLs to templ
   </select>
 </main>
 
-<!-- _0.0.0_.html -->
+<!-- _0.0.0.html -->
 <p class="version">
   Version 0.0.0
   <a href="/">⬅️</a>
 </p>
 
-<!-- _0.0.0_.html -->
+<!-- _0.0.0.html -->
 <p class="version">
   Version 0.0.0
   <a href="/">⬅️</a>
