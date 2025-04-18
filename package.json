@@ -1,6 +1,6 @@
 {
   "name": "htmx-select",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A htmx extension for HTML select element events.",
   "main": "build/htmx-select.js",
   "type": "module",
