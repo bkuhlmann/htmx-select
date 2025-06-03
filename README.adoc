@@ -33,7 +33,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-select@latest"
-        integrity="sha384-sHXxspXI+1G3Mb+k1zPcNdkBRL2Q+nKLcOtkbUPE0USxJFJtjf5pQpuykwTDAcPc"
+        integrity="sha384-tV9hAXjvOXRR0ov0OzoGh67dwFQXv2ZLHWs3ev8cz6e0zquAJwavfSE6ab6UoFXS"
         crossorigin="anonymous">
 </script>
 ----
