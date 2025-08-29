@@ -2,7 +2,7 @@
   "name": "htmx-select",
   "version": "0.6.0",
   "description": "A htmx extension for HTML select element events.",
-  "main": "build/htmx-select.js",
+  "main": "build/htmx-select.esm.js",
   "type": "module",
   "files": [
     "build/*.js",
