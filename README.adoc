@@ -33,7 +33,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-select@latest"
-        integrity="sha384-tV9hAXjvOXRR0ov0OzoGh67dwFQXv2ZLHWs3ev8cz6e0zquAJwavfSE6ab6UoFXS"
+        integrity="sha384-KMC31xzp4MoFILGxlftLhiqi68jrjw66Ygqa4O5zidGWkqWgvkKxCwKOJ82C6Fme"
         crossorigin="anonymous">
 </script>
 ----
@@ -51,7 +51,7 @@ To use via Import Maps, add the following to your layout:
 </script>
 
 <script type="module">
-  import * as htmx_remove from "htmx-select";
+  import "htmx-select";
 </script>
 ----
 
@@ -62,11 +62,11 @@ To install via link:https://www.npmjs.com[NPM], run:
 npm install htmx-select
 ----
 
-Once the library is installed, you only need to require it:
+Once the library is installed, you only need to import it:
 
-[source,html]
+[source,js]
 ----
-<script src="htmx-select.js"></script>
+import "htmx-select";
 ----
 
 == Usage
@@ -146,20 +146,6 @@ To test, run:
 [source,bash]
 ----
 bin/rake
-----
-
-To only check code quality, run:
-
-[source,bash]
-----
-npm run quality
-----
-
-To only check specs, run:
-
-[source,bash]
-----
-bin/rspec
 ----
 
 == Deployment
