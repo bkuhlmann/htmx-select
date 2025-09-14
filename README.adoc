@@ -99,16 +99,16 @@ To use, implement a select element with option values that provide URLs to templ
   <a href="/">⬅️</a>
 </p>
 
-<!-- _0.0.0.html -->
+<!-- _0.0.1.html -->
 <p class="version">
-  Version 0.0.0
+  Version 0.0.1
   <a href="/">⬅️</a>
 </p>
 ----
 
 When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via both the `hx-get` and `hx-ext` attributes and ensuring each option element has a URI value. That's it!
 
-💡 The `hx-get` attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
+⚠️ The `hx-get` attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
 
 == Development
 
