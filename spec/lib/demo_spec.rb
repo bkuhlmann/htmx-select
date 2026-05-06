@@ -24,13 +24,13 @@ RSpec.describe "Demo", :js do
 
   it "loads demonstration" do
     visit "/index.html"
-    expect(page).to have_content("Demonstration")
+    expect(page).to have_text("Demonstration")
   end
 
   it "selects version" do
     visit "/index.html"
     select "0.0.0", from: "Version"
 
-    expect(page).to have_content("Version 0.0.0")
+    expect(page).to have_text("Version 0.0.0")
   end
 end
