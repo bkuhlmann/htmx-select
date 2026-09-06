@@ -34,7 +34,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-select@latest"
-        integrity="sha384-KMC31xzp4MoFILGxlftLhiqi68jrjw66Ygqa4O5zidGWkqWgvkKxCwKOJ82C6Fme"
+        integrity="sha384-Jipyz7VFsYoNax8N4SZyU2yLO37a8sd9FEowjWMHKXzqOLMNGc9NdGnx6e3YR7LQ"
         crossorigin="anonymous">
 </script>
 ----
@@ -85,10 +85,9 @@ To use, implement a select element with option values that provide URLs to templ
           class="versions"
           hx-get=""
           hx-trigger="change"
-          hx-target=".body"
-          hx-ext="select">
+          hx-target=".body">
 
-    <option value="" class="option">Select...</option>
+    <option class="option">Select...</option>
     <option value="_0.0.0.html" class="option">0.0.0</option>
     <option value="_0.0.1.html" class="option">0.0.1</option>
   </select>
@@ -107,7 +106,7 @@ To use, implement a select element with option values that provide URLs to templ
 </p>
 ----
 
-When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via both the `hx-get` and `hx-ext` attributes and ensuring each option element has a URI value. That's it!
+When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via the `hx-get` attribute and ensuring each option element has a URI value. That's it!
 
 ⚠️ The `hx-get` attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
 

@@ -7,13 +7,13 @@
     <title>Demo</title>
 
     <meta charset="utf-8">
-    <meta name="description" content="A demo page.">
+    <meta name="description" content="A demonstration.">
     <meta name="author" content="Brooke Kuhlmann">
 
     <link href="https://alchemists.io/favicon.ico" rel="icon" sizes="32x32">
     <link href="/stylesheet.css" rel="stylesheet">
 
-    <script src="https://unpkg.com/htmx.org@2.0"></script>
+    <script src="https://unpkg.com/htmx.org@4.0"></script>
     <script src="/htmx-select.js"></script>
   </head>
 
@@ -31,10 +31,9 @@
               class="versions"
               hx-get=""
               hx-trigger="change"
-              hx-target=".body"
-              hx-ext="select">
+              hx-target=".body">
 
-        <option value="" class="option">Select...</option>
+        <option class="option">Select...</option>
         <option value="_0.0.0.html" class="option">0.0.0</option>
         <option value="_0.0.1.html" class="option">0.0.1</option>
       </select>
