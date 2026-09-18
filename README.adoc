@@ -6,7 +6,7 @@
 
 = htmx Select
 
-This library is a {htmx_link} link:https://htmx.org/extensions[extension] that can be used for situations where you need to make a HTTP GET request via a HTML select option's value upon a change and/or blur event. By default, most browsers don't support this functionality (except Firefox) so, by using this extention, you can enhance the select element to load/render dynamic content for a better user experience.
+This library is a {htmx_link} link:https://htmx.org/extensions[extension] that can be used for situations where you need to make a HTTP GET request via a HTML select option's value upon a change and/or blur event. Most browsers don't support this functionality (except Firefox) so, by using this extention, you can enhance the select element to load/render dynamic content for a better user experience.
 
 toc::[]
 
@@ -34,7 +34,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-select@latest"
-        integrity="sha384-Jipyz7VFsYoNax8N4SZyU2yLO37a8sd9FEowjWMHKXzqOLMNGc9NdGnx6e3YR7LQ"
+        integrity="sha384-+QeEZZpkDxiJ1jsLhYyJq2w2jr7ojtUO0KJlc5mofMDw/GsMSEgmI6XGvTP2VMkC"
         crossorigin="anonymous">
 </script>
 ----
@@ -83,9 +83,9 @@ To use, implement a select element with option values that provide URLs to templ
   <select id="version"
           name="version"
           class="versions"
-          hx-get=""
-          hx-trigger="change"
-          hx-target=".body">
+          data-hx-get=""
+          data-hx-trigger="change"
+          data-hx-target=".body">
 
     <option class="option">Select...</option>
     <option value="_0.0.0.html" class="option">0.0.0</option>
@@ -106,9 +106,9 @@ To use, implement a select element with option values that provide URLs to templ
 </p>
 ----
 
-When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via the `hx-get` attribute and ensuring each option element has a URI value. That's it!
+When selecting a specific version (i.e. 0.0.0 or 0.0.1), this extension will make a HTTP GET request based on the `value` of the option selected. This is made possible via the `data-hx-get` attribute and ensuring each option element has a URI value. That's it!
 
-⚠️ The `hx-get` attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
+⚠️ The `data-hx-get` (or `hx-get`) attribute should be an empty string. If a string is provided, it'll be overwritten by the value of the selected option.
 
 == Development
 
